@@ -28,7 +28,7 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 Math Magicians <a name="about-project"></a>
+# 📖 BookStore2.0 <a name="about-project"></a>
 
 **BookStore2.0** is an innovative and visually stunning web application that redefines the way we experience and interact with books.
 
