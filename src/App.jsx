@@ -1,8 +1,8 @@
-import React, { PureComponent } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Books from "./components/BookList";
-import Categories from "./components/Categories";
-import Links from "./components/Links";
+import React, { PureComponent } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Books from './components/BookList';
+import Categories from './components/Categories';
+import Links from './components/Links';
 
 class App extends PureComponent {
   render() {
