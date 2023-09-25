@@ -1,33 +1,31 @@
+/* eslint-disable */
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/bookSlice';
 
-const Book = (props) => {
-  const { book } = props;
+const Book = () => {
+  const books = useSelector((state) => state.book.books);
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = (bookId) => {
+    dispatch(removeBook(bookId));
+  };
+
   return (
     <div className="book-container">
-      {book.map((book) => (
+      {books.map((book) => (
         <div key={book.id}>
           <h3>{book.title}</h3>
           <p>{book.author}</p>
           <span>
-            <button type="button">Comments</button>
-            <button type="button">Remove</button>
-            <button type="button">Edit</button>
+            <button type="button" onClick={() => handleRemoveBook(book.id)}>
+              Remove
+            </button>
           </span>
         </div>
       ))}
     </div>
   );
-};
-
-Book.propTypes = {
-  book: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
 };
 
 export default Book;
