@@ -1,9 +1,8 @@
-/* eslint-disable */
-import React, { PureComponent } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Categories from "./components/Categories";
-import Links from "./components/Links";
-import BooksContainer from "./components/BooksContainer";
+import React, { PureComponent } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Categories from './components/Categories';
+import Links from './components/Links';
+import BooksContainer from './components/BooksContainer';
 
 class App extends PureComponent {
   render() {

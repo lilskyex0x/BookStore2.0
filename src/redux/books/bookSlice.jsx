@@ -1,12 +1,11 @@
-/* eslint-disable */
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   books: [],
 };
 
 export const bookSlice = createSlice({
-  name: "books",
+  name: 'books',
   initialState,
   reducers: {
     addBook: (state, action) => {
