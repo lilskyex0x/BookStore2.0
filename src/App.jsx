@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Books from './components/BookList';
-import Categories from './components/Categories';
-import Links from './components/Links';
+/* eslint-disable */
+import React, { PureComponent } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Categories from "./components/Categories";
+import Links from "./components/Links";
+import BooksContainer from "./components/BooksContainer";
 
 class App extends PureComponent {
   render() {
@@ -11,7 +12,7 @@ class App extends PureComponent {
         <Router>
           <Routes>
             <Route path="/" element={<Links />}>
-              <Route index element={<Books />} />
+              <Route index element={<BooksContainer />} />
               <Route path="categories" element={<Categories />} />
             </Route>
           </Routes>
