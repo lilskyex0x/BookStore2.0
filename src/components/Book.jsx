@@ -16,6 +16,7 @@ const Book = () => {
         <div key={book.id}>
           <h3>{book.title}</h3>
           <p>{book.author}</p>
+          <p>{book.category}</p>
           <span>
             <button type="button" onClick={() => handleRemoveBook(book.id)}>
               Remove

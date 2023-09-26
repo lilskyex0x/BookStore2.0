@@ -7,6 +7,7 @@ const AddNewBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('Fiction');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ const AddNewBook = () => {
       id: uuidv4(),
       title,
       author,
+      category,
     };
     dispatch(addBook(newBook));
     setTitle('');
@@ -36,6 +38,10 @@ const AddNewBook = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="Fiction">Fiction</option>
+          <option value="NonFiction">NonFiction</option>
+        </select>
         <button type="submit">Add Book</button>
       </form>
     </div>

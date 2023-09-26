@@ -45,9 +45,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **N/A**
-- **N/A**
-- **N/A**
+- **Add book to the list with author and title**
+- **Remove unwanted book from the list**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,8 +115,8 @@ You can deploy this project using: GitHub but if you want to deploy make sure yo
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **N/A**
-- [ ] **N/A**
+- [ ] **Design for the BookStore app**
+- [ ] **Listing each book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
