@@ -1,25 +1,55 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/bookSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookAsync } from '../redux/books/bookSlice';
 
 const AddNewBook = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('Fiction');
+  const books = useSelector((state) => state.book.books);
 
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    author: '',
+    category: 'Fiction',
+  });
+
+  const getLastItemId = () => {
+    const lastItem = books[books.length - 1];
+    if (lastItem && lastItem.item_id) {
+      const lastItemIdMatch = lastItem.item_id.match(/\d+/);
+      if (lastItemIdMatch) {
+        const lastItemId = parseInt(lastItemIdMatch[0], 10);
+        return lastItemId;
+      }
+    }
+    return 0;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const nextItemId = `item${getLastItemId() + 1}`;
     const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-      category,
+      item_id: nextItemId,
+      ...formData,
     };
-    dispatch(addBook(newBook));
-    setTitle('');
-    setAuthor('');
+
+    try {
+      await dispatch(addBookAsync(newBook));
+      setFormData({
+        title: '',
+        author: '',
+        category: 'Fiction',
+      });
+    } catch (error) {
+      alert('Error adding book:', error);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -28,17 +58,23 @@ const AddNewBook = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="title"
           placeholder="Book Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={formData.title}
+          onChange={handleInputChange}
         />
         <input
           type="text"
+          name="author"
           placeholder="Book Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          value={formData.author}
+          onChange={handleInputChange}
         />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleInputChange}
+        >
           <option value="Fiction">Fiction</option>
           <option value="NonFiction">NonFiction</option>
         </select>
