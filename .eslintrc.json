@@ -19,6 +19,7 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
+    "camelcase": "off",
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "no-alert": "off"
