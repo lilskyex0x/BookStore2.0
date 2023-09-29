@@ -4,7 +4,7 @@ import Book from './Book';
 
 const BooksContainer = () => (
   <div className="book-container">
-    <Book />
+    <Book key="book-component-key" />
     <AddNewBook />
   </div>
 );
