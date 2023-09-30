@@ -10,8 +10,8 @@ const Categories = () => {
   };
 
   return (
-    <div>
-      <button type="button" onClick={handleClick}>
+    <div className="checkStatus__container">
+      <button className="checkStatus__btn" type="button" onClick={handleClick}>
         Check status
       </button>
     </div>
