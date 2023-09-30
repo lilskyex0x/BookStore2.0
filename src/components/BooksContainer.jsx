@@ -3,7 +3,7 @@ import AddNewBook from './AddNewBook';
 import Book from './Book';
 
 const BooksContainer = () => (
-  <div className="book-container">
+  <div className="wrapper">
     <Book key="book-component-key" />
     <AddNewBook />
   </div>
