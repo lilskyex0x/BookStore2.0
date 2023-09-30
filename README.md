@@ -115,8 +115,8 @@ You can deploy this project using: GitHub but if you want to deploy make sure yo
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Design for the BookStore app**
-- [ ] **Listing each book**
+- [x] **Design for the BookStore app**
+- [x] **Listing each book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
