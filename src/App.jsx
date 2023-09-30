@@ -14,7 +14,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="main__container">
       <Router>
         <Routes>
           <Route path="/" element={<Links />}>
