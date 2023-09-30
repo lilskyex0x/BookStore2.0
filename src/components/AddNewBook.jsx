@@ -54,9 +54,10 @@ const AddNewBook = () => {
 
   return (
     <div className="add-new-book">
-      <h1>Add New Book</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="addBook__title">Add new book</h1>
+      <form className="add__form" onSubmit={handleSubmit}>
         <input
+          className="title__input"
           type="text"
           name="title"
           placeholder="Book Title"
@@ -64,6 +65,7 @@ const AddNewBook = () => {
           onChange={handleInputChange}
         />
         <input
+          className="author__input"
           type="text"
           name="author"
           placeholder="Book Author"
@@ -71,6 +73,7 @@ const AddNewBook = () => {
           onChange={handleInputChange}
         />
         <select
+          className="fiction__select"
           name="category"
           value={formData.category}
           onChange={handleInputChange}
@@ -78,7 +81,7 @@ const AddNewBook = () => {
           <option value="Fiction">Fiction</option>
           <option value="NonFiction">NonFiction</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button className="submit__btn" type="submit">Add Book</button>
       </form>
     </div>
   );
